@@ -1,12 +1,9 @@
 from scrapy.selector import Selector
 from scrapy.http import HtmlResponse
-from flask import Flask, request
-from flask_restful import Resource, Api, abort, reqparse
-
-from scrapy.selector import Selector
-from scrapy.http import HtmlResponse
 from collections import defaultdict
 import requests
+from flask import Flask, request
+from flask_restful import Resource, Api, abort, reqparse
 
 app = Flask(__name__)
 api = Api(app)

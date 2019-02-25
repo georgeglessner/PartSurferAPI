@@ -1,6 +1,6 @@
 # HPE Partsurfer API
 
-## ENDPOINT
+## Endpoint
 `http://68.2.92.148:5000/hpe/part/{partNumber}`
 
 ## Example

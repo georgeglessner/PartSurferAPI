@@ -25,23 +25,24 @@ class Parts(Resource):
             .getall()
         )
 
-        # Initialize dictionary and variables
-        results = defaultdict(list)
+        # Initialize dictionary, array and index
+        results = {}
+        resultsArray = []
         index = 0
-        hpid = 0
 
         # Only grab part and description
         for entry in selection:
             if index == 0:
-                results[hpid].append({"Part": entry})
+                results["Part"] = entry
             if index == 1:
-                results[hpid].append({"Description": entry})
+                results["Description"] = entry
             if index == 2:
-                hpid += 1
+                resultsArray.append(results)
+                results = {}
                 index = -1
             index += 1
 
-        return {"results": results}
+        return {"results": resultsArray}
 
 
 # File paths and params
